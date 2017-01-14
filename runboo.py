@@ -1,3 +1,3 @@
 import boo
-# boo
+# boo!
 boo.spook()
