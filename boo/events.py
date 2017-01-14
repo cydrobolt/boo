@@ -8,6 +8,16 @@ class KeyboardBoo(PyKeyboardEvent):
         PyKeyboardEvent.__init__(self)
 
         self.space_pressed = True
+        self.excluded_chars = [
+            'b',
+            'o',
+            'Return',
+            '!',
+            '?',
+            '.',
+            'Shift_L',
+            'Shift_R'
+        ]
 
     def tap(self, keycode, character, press):
         # press is boolean; True for press, False for release
@@ -18,7 +28,7 @@ class KeyboardBoo(PyKeyboardEvent):
                 self.space_pressed = True
                 return
 
-            if character in ['b', 'o', 'Return'] or keycode == k.backspace_key:
+            if character in self.excluded_chars or keycode == k.backspace_key:
                 # exclude 'boo' from keypress to
                 # avoid recursive boos
                 return
