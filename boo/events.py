@@ -16,7 +16,9 @@ class KeyboardBoo(PyKeyboardEvent):
             '?',
             '.',
             'Shift_L',
-            'Shift_R'
+            'Shift_R',
+            'Command',
+            'Alternate'
         ]
 
     def tap(self, keycode, character, press):
