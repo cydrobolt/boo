@@ -9,15 +9,16 @@ k = PyKeyboard()
 kb_boo = KeyboardBoo()
 
 def is_halloween_in_january():
-    return time.strftime("%d") in ["13", "14"] and time.strftime("%m") == "01"
+    return True # every day is spooky day
+    # return time.strftime("%d") in ["13", "14"] and time.strftime("%m") == "01"
 
 def type_slowly(text):
     for char in text:
         k.tap_key(char)
         if char == ' ':
-            time.sleep(0.6)
+            time.sleep(0.3)
         else:
-            time.sleep(0.4)
+            time.sleep(0.2)
 
 def spook():
     if not is_halloween_in_january():
